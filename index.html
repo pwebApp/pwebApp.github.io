@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Números</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="css/estilos.css">
+  <script src="js/libs/bignumber.js/bignumber.min.js"></script>
+  <script src="js/libs/numeral.js/numeral.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Números</h1>
+    </header>
+    <form id="forma" action="javascript:procesa()">
+      <p><em>El borde azul indica obligatorio</em></p>
+      <p>
+        <label accesskey="E">
+          Entero<br>
+          <input name="entero" type="number" autofocus
+                 required min="0" max="20" step="1">   
+        </label>
+        <br><em>Entre 0 y 20.</em>
+        <br><output id="salidaEntero"></output>
+      </p>
+      <p>
+        <label accesskey="R">
+          Rango<br>
+          <span>
+            3
+            <input name="rango" type="range" min="3"
+                   max="10" step="1" list="rayas">
+            10
+          </span>
+        </label>
+        <br><output id="salidaRango"></output>
+      </p>
+      <p>
+        <label>
+          Porcentaje de Entero/Rango<br>
+          <meter id="medidor" min="0" max="1" low="0.3"
+                 high="0.7" optimum="0.5" value="0"></meter>
+        </label>
+        <br><output id="salidaPorcentaje"></output>
+       </p>
+       <p>
+         <label accesskey="N">
+           Número<br>
+           <input name="numero" type="text" class="numero"
+                  required pattern="[0-9,]+[.]\d{2}?"
+                  placeholder="2 decimales" maxlength="11"
+                  size="13" value=".00">
+         </label>
+         <br><output id="salidaNumero"></output>
+       </p>
+       <p>
+         <input type="submit" value="Procesar" accesskey="P">
+         <button id="limpiar">Limpiar</button>
+       </p>
+    </form>
+    <footer>
+      Copyright 2021 Yo
+    </footer>
+    <datalist id="rayas">
+      <option value="3">
+      <option value="4">
+      <option value="5">
+      <option value="6">
+      <option value="7">
+      <option value="8">
+      <option value="9">
+      <option value="10">
+    </datalist>
+    <script src="js/CtrlNumeros.js"></script>
+  </body>
+</html>
